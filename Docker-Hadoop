@@ -1,0 +1,27 @@
+Ejemplo de MapReduce  
+
+Como levantar el nodo de hadoop
+✅ 1. Inicia el HDFS (Hadoop Distributed File System)
+Primero, necesitas levantar el sistema de archivos distribuido de Hadoop:
+  start-dfs.sh
+Esto iniciará:
+
+.  El NameNode
+.  El DataNode
+
+Como hacer el mapreduce de la tarea 2
+
+Contar Palabras
+En este ejemplo contaremos palabras de un archivo de texto.
+
+Descargar un script de ejemplo MapReduce
+Usaremos un archivo .jar que contiene las clases necesarias para ejecutar el algoritmo MapReduce. 
+
+
+
+
+Como hacer el mapreduce de la tarea 3
+
+
+Como apagar el nodo de hadoop
+
