@@ -1,4 +1,4 @@
-Ejemplo de MapReduce  
+MapReduce  
 
 Como levantar el nodo de hadoop
 ✅ 1. Inicia el HDFS (Hadoop Distributed File System)
@@ -11,17 +11,49 @@ Esto iniciará:
 
 Como hacer el mapreduce de la tarea 2
 
-Contar Palabras
-En este ejemplo contaremos palabras de un archivo de texto.
-
 Descargar un script de ejemplo MapReduce
 Usaremos un archivo .jar que contiene las clases necesarias para ejecutar el algoritmo MapReduce. 
+con esto se utiliara un ejemplo para contar las palabras de un archivo txt.
 
+Para ejecutarlo se descargar un script de ejemplo MapReduce de la siguiente liga:
+-  https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-examples/2.7.1/
 
+Copiar los archivos .jar y .txt al contenedor
+Para mover el archivo hadoop-mapreduce-examples-2.7.1-sources.jar ejecute
 
+docker cp hadoop-mapreduce-examples-2.7.1-sources.jar namenode:/tmp
+
+Se crea la carpeta de entrada dentro del contenedor namenode
+Ingrese al contenedor namenode ejecutando:
+docker exec -it namenode bash
+
+Luego ejecute: 
+hdfs dfs -mkdir /user/root/input_contador
+
+Ejecutar MapReduce
+Ejecutar
+hadoop jar hadoop-mapreduce-examples-2.7.1-sources.jar org.apache.hadoop.examples.WordCount input_contador output_contador
 
 Como hacer el mapreduce de la tarea 3
 
+Se utilizará un archivo .jar que contiene las clases necesarias para ejecutar el algoritmo MapReduce. 
+A partir de este archivo:
+- https://drive.google.com/file/d/1m6uSyzNCQV1617fmhQyW59sMQ2DYef2E/view?usp=sharing
 
-Como apagar el nodo de hadoop
+Ejecutar MapReduce
+Ingrese al contenedor namenode ejecutando 
+docker exec -it namenode bash
+
+Primero ejecute: 
+cd /tmp 
+
+Ejecutar
+hadoop jar hadoop-examples-0.20.205.0.jar sudoku puzzle1.dta
+
+
+Como apagar el nodo de Hadoop
+🧠 Para detener un nodo maestro (NameNode, ResourceManager, etc.)
+En el nodo maestro:
+$HADOOP_HOME/sbin/hadoop-daemon.sh stop namenode
+$HADOOP_HOME/sbin/yarn-daemon.sh stop resourcemanager
 
